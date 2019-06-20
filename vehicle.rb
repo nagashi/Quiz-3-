@@ -1,6 +1,7 @@
 class Vehicle
-  attr_reader :name, :year, :price
-  attr_writer :name, :year, :price
+  attr_accessor :name
+  attr_accessor :year
+  attr_accessor :price
 
   def to_s
     "#{@year}: #{@name}: #{@price}"
@@ -19,30 +20,30 @@ class Bicycle < Vehicle
   end
 end
 
-c1 = Car.new
-c2 = Car.new
-c3 = Bicycle.new
+car1 = Car.new
+car2 = Car.new
+bicycle = Bicycle.new
 
-c1.name = "Porsche"
-c1.year = 2012
-c1.price = 23500
+car1.name = "Porsche"
+car1.year = 2012
+bicycle.price = 23500
 
-c2.name = "Volvo"
-c2.year = 2014
-c2.price = 22500
+car2.name = "Volvo"
+car2.year = 2014
+car2.price = 22500
 
-c3.name = 'Schwin 700c'
-c3.year = 2019
-c3.price = 299
+bicycle.name = 'Schwin 700c'
+bicycle.year = 2019
+bicycle.price = 299
 
-puts "The #{c1.year} #{c1.name} costs #{c1.price}"
-puts "The #{c2.year} #{c2.name} costs #{c2.price}"
-puts "The #{c3.year} #{c3.name} costs #{c3.price}"
+puts "The #{car1.year} #{car1.name} costs #{car1.price}"
+puts "The #{car2.year} #{car2.name} costs #{car2.price}"
+puts "The #{bicycle.year} #{bicycle.name} costs #{bicycle.price}"
 
 puts ''
 
-p c1.to_s
-p c2.to_s
-p c1.wheels
-p c3.to_s
-p c3.wheels
+p car1.to_s
+p car2.to_s
+p car1.wheels
+p bicycle.to_s
+p bicycle.wheels
